@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { DocumentModel } from '../../models/document.model';
 import { urlForImg } from '../../constants';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { SwalService } from '../../services/swal.service';
 
 @Component({
   selector: 'app-ui-doc-details',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './ui-doc-details.component.html',
   styleUrl: './ui-doc-details.component.css',
 })

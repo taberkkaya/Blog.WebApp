@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { HttpService } from '../../services/http.service';
 import { SwalService } from '../../services/swal.service';
 import { BlogModel } from '../../models/blog.model';
@@ -8,7 +8,7 @@ import { urlForImg } from '../../constants';
 @Component({
   selector: 'app-ui-blog-detail',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './ui-blog-detail.component.html',
   styleUrl: './ui-blog-detail.component.css',
 })

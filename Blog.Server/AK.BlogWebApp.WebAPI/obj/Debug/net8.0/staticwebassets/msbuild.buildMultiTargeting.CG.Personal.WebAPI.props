@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\CG.Personal.WebAPI.props" />
-</Project>

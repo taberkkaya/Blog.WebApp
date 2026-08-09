@@ -1,41 +1,93 @@
-# Blog.WebApp
+# Cihan Gökpınar — SAP FI Blog & Knowledge Hub
 
-## 🚀 Technologies
+SAP FI danışmanlığı, güncel yazılar ve uygulama dokümanları için geliştirilmiş tam kapsamlı web uygulaması. Proje; ziyaretçi sitesi, içerik kütüphanesi ve yönetim panelinden oluşur.
 
-- .NET Core Web API
-- **TS.CleanArchitecture**
-- **TS.GenericRepository**
-- **TS.Result**
-- Clean Architecture
-- Result Pattern
-- CQRS Pattern
-- Entity Framework Core
-- MediatR
-- AutoMapper
-- JwtBearer
-- TypeScript
-- Angular
-- **angular-ts-cli**
+## Teknolojiler
 
-![image](https://github.com/user-attachments/assets/66001437-89ca-4c98-8cb8-a8c7eb8557ae)
-![image](https://github.com/user-attachments/assets/8673b17d-cdac-4e8f-9b55-7b4fbef8cfc6)
-![image](https://github.com/user-attachments/assets/53b3bb80-9b06-41b8-8b13-2c299a68e5a1)
-![image](https://github.com/user-attachments/assets/d8a953cd-5026-4b31-abfc-7ebc208409f4)
-![image](https://github.com/user-attachments/assets/b6479008-ce90-42c3-bf03-2dbc1154eeb0)
-![image](https://github.com/user-attachments/assets/265c50d7-c181-4c31-a3ea-561f3d0b2bee)
+- Angular 18
+- ASP.NET Core Web API (.NET 8)
+- Entity Framework Core ve SQL Server
+- Clean Architecture, CQRS ve MediatR
+- ASP.NET Core Identity ve JWT
+- Quill içerik editörü
 
-![image](https://github.com/user-attachments/assets/8a5f347b-c9c3-4894-aebc-19a31a28f9b6)
-![image](https://github.com/user-attachments/assets/c6adca94-d07e-4fd9-bc98-45053bfc3bbc)
-![image](https://github.com/user-attachments/assets/1041de21-bcc9-43ea-b27d-0be95f780d71)
-![image](https://github.com/user-attachments/assets/54e0ae8b-d105-499b-bce2-00fa7ad33ba9)
-![image](https://github.com/user-attachments/assets/a17f00fc-12ab-443a-9604-5b6085986ffd)
-![image](https://github.com/user-attachments/assets/fff7c300-5759-4f97-b8e3-8aef22257bcb)
-![image](https://github.com/user-attachments/assets/619f076b-bd7e-43be-a678-40e0cb0484e2)
+## Proje yapısı
 
+```text
+Blog.Client/my-app                         Angular kullanıcı ve admin arayüzü
+Blog.Server/AK.BlogWebApp.WebAPI           API başlangıç projesi
+Blog.Server/AK.BlogWebApp.Application      Uygulama ve CQRS katmanı
+Blog.Server/AK.BlogWebApp.Domain           Domain modelleri
+Blog.Server/AK.BlogWebApp.Infrastructure   Veritabanı ve altyapı katmanı
+```
 
+## Gereksinimler
 
+- .NET 8 SDK veya üzeri
+- Node.js 20 veya üzeri
+- SQL Server
+- Angular CLI
 
+## Güvenli yerel yapılandırma
 
+Gerçek veritabanı bağlantısı, JWT anahtarı ve production parolaları repoya eklenmemelidir. Bunları .NET User Secrets ile tanımlayın:
 
+```powershell
+cd Blog.Server/AK.BlogWebApp.WebAPI
+dotnet user-secrets init
+dotnet user-secrets set "ConnectionStrings:SqlServer" "YOUR_LOCAL_CONNECTION_STRING"
+dotnet user-secrets set "Jwt:SecretKey" "YOUR_LONG_RANDOM_LOCAL_SECRET"
+dotnet user-secrets set "Jwt:Issuer" "Blog.WebApp"
+dotnet user-secrets set "Jwt:Audience" "Blog.WebApp.Client"
+```
 
+Alternatif olarak yalnızca yerelde kullanılan `appsettings.Local.json` dosyasını tercih edebilirsiniz. Bu dosya `.gitignore` kapsamındadır.
 
+## Veritabanını hazırlama
+
+```powershell
+cd Blog.Server
+dotnet ef database update `
+  --project AK.BlogWebApp.Infrastructure `
+  --startup-project AK.BlogWebApp.WebAPI
+```
+
+## Backend'i çalıştırma
+
+```powershell
+cd Blog.Server
+dotnet run --project AK.BlogWebApp.WebAPI --launch-profile https
+```
+
+Swagger: `https://localhost:7054/swagger`
+
+## Frontend'i çalıştırma
+
+Yeni terminal açın:
+
+```powershell
+cd Blog.Client/my-app
+npm install
+npm start
+```
+
+```text
+Site:         http://localhost:4200
+Admin girişi: http://localhost:4200/login
+```
+
+Frontend'in yerel API adresi `src/app/constants.ts` dosyasında tanımlıdır.
+
+## Doğrulama
+
+```powershell
+dotnet build Blog.Server/AK.BlogWebApp.sln
+cd Blog.Client/my-app
+npm run build
+```
+
+## Güvenlik notları
+
+- Connection string, JWT secret ve yayın profillerini commit etmeyin.
+- Production değerlerini environment variable veya güvenli secret store üzerinden sağlayın.
+- Daha önce yayımlanmış bir parola veya anahtar varsa repodan silmek yeterli değildir; ilgili değeri mutlaka yenileyin.

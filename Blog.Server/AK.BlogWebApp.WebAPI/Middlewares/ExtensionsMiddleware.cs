@@ -11,7 +11,9 @@ namespace AK.BlogWebApp.WebAPI.Middlewares
             {
                 var userManager = scoped.ServiceProvider.GetRequiredService<UserManager<AppUser>>();
 
-                if (!userManager.Users.Any(p => p.UserName == "admin"))
+                var admin = userManager.Users.FirstOrDefault(p => p.UserName == "admin");
+
+                if (admin is null)
                 {
                     AppUser user = new()
                     {
@@ -23,6 +25,15 @@ namespace AK.BlogWebApp.WebAPI.Middlewares
                     };
 
                     userManager.CreateAsync(user, "1").Wait();
+                }
+                else if (app.Environment.IsDevelopment())
+                {
+                    // Keep the local development account usable after test attempts.
+                    userManager.SetLockoutEndDateAsync(admin, null).Wait();
+                    userManager.ResetAccessFailedCountAsync(admin).Wait();
+
+                    var resetToken = userManager.GeneratePasswordResetTokenAsync(admin).Result;
+                    userManager.ResetPasswordAsync(admin, resetToken, "1").Wait();
                 }
             }
         }

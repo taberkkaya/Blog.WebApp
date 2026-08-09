@@ -1,0 +1,29 @@
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# .NET build output
+**/bin/
+**/obj/
+**/TestResults/
+
+# Frontend dependencies and output
+**/node_modules/
+**/dist/
+.angular/
+
+# Local secrets and environment overrides
+**/appsettings.Local.json
+**/appsettings.*.Local.json
+.env
+.env.*
+!.env.example
+
+# Publish and temporary files
+**/Properties/PublishProfiles/*.user
+**/Publish/
+*.log
+*.tmp

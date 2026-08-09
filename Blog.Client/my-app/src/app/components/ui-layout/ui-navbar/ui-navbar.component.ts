@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpService } from '../../../services/http.service';
 import { HeaderAreaModel } from '../../../models/header-area.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-ui-navbar',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './ui-navbar.component.html',
   styleUrl: './ui-navbar.component.css',
 })

@@ -3,12 +3,12 @@ import { SharedModule } from '../../modules/shared.module';
 import { LoginModel } from '../../models/login.model';
 import { HttpService } from '../../services/http.service';
 import { LoginResponseModel } from '../../models/login.response.model';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
