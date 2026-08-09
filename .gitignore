@@ -25,5 +25,6 @@
 # Publish and temporary files
 **/Properties/PublishProfiles/*.user
 **/Publish/
+artifacts/
 *.log
 *.tmp

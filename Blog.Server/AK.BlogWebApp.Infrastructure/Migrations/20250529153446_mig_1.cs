@@ -90,6 +90,7 @@ namespace AK.BlogWebApp.Infrastructure.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Profession = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LinkedinUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -230,17 +231,17 @@ namespace AK.BlogWebApp.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "AboutPages",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "Description", "ImgUrl", "IsActive", "Title", "UpdatedDate" },
-                values: new object[] { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 10, 1, 1, 31, 111, DateTimeKind.Utc).AddTicks(6981), null, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "full-stack-devlopment-min_20250510_033652.png", true, "What is Lorem Ipsum?", null });
+                values: new object[] { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 29, 15, 34, 46, 418, DateTimeKind.Utc).AddTicks(854), null, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "full-stack-devlopment-min_20250510_033652.png", true, "What is Lorem Ipsum?", null });
 
             migrationBuilder.InsertData(
                 table: "BlogCategories",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "IsActive", "Title", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { new Guid("0b6c5c91-9d48-4e9b-8b5d-fed05be56a73"), new DateTime(2025, 5, 10, 4, 1, 31, 111, DateTimeKind.Local).AddTicks(9421), null, false, "What is Lorem Ipsum?", null },
-                    { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 10, 4, 1, 31, 111, DateTimeKind.Local).AddTicks(9403), null, false, "What is Lorem Ipsum?", null },
-                    { new Guid("6def4f3d-93b9-4c24-97e1-143499f2955f"), new DateTime(2025, 5, 10, 4, 1, 31, 111, DateTimeKind.Local).AddTicks(9423), null, false, "What is Lorem Ipsum?", null },
-                    { new Guid("d7a19c6c-0d9f-4d10-9207-cfc9c8499a32"), new DateTime(2025, 5, 10, 4, 1, 31, 111, DateTimeKind.Local).AddTicks(9425), null, false, "What is Lorem Ipsum?", null }
+                    { new Guid("0b6c5c91-9d48-4e9b-8b5d-fed05be56a73"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(3244), null, false, "What is Lorem Ipsum?", null },
+                    { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(3232), null, false, "What is Lorem Ipsum?", null },
+                    { new Guid("6def4f3d-93b9-4c24-97e1-143499f2955f"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(3246), null, false, "What is Lorem Ipsum?", null },
+                    { new Guid("d7a19c6c-0d9f-4d10-9207-cfc9c8499a32"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(3247), null, false, "What is Lorem Ipsum?", null }
                 });
 
             migrationBuilder.InsertData(
@@ -253,21 +254,21 @@ namespace AK.BlogWebApp.Infrastructure.Migrations
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "IsActive", "Title", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { new Guid("0b6c5c91-9d48-4e9b-8b5d-fed05be56a73"), new DateTime(2025, 5, 10, 4, 1, 31, 112, DateTimeKind.Local).AddTicks(957), null, false, "What is Lorem Ipsum?", null },
-                    { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 10, 4, 1, 31, 112, DateTimeKind.Local).AddTicks(954), null, false, "What is Lorem Ipsum?", null },
-                    { new Guid("6def4f3d-93b9-4c24-97e1-143499f2955f"), new DateTime(2025, 5, 10, 4, 1, 31, 112, DateTimeKind.Local).AddTicks(962), null, false, "What is Lorem Ipsum?", null },
-                    { new Guid("d7a19c6c-0d9f-4d10-9207-cfc9c8499a32"), new DateTime(2025, 5, 10, 4, 1, 31, 112, DateTimeKind.Local).AddTicks(963), null, false, "What is Lorem Ipsum?", null }
+                    { new Guid("0b6c5c91-9d48-4e9b-8b5d-fed05be56a73"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(5290), null, false, "What is Lorem Ipsum?", null },
+                    { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(5284), null, false, "What is Lorem Ipsum?", null },
+                    { new Guid("6def4f3d-93b9-4c24-97e1-143499f2955f"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(5296), null, false, "What is Lorem Ipsum?", null },
+                    { new Guid("d7a19c6c-0d9f-4d10-9207-cfc9c8499a32"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(5298), null, false, "What is Lorem Ipsum?", null }
                 });
 
             migrationBuilder.InsertData(
                 table: "HeaderAreas",
-                columns: new[] { "Id", "CreatedDate", "DeletedDate", "FirstName", "IsActive", "LastName", "Profession", "UpdatedDate" },
-                values: new object[] { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ataberk", false, "Kaya", "Full Stack Software Developer", null });
+                columns: new[] { "Id", "CreatedDate", "DeletedDate", "FirstName", "IsActive", "LastName", "LinkedinUrl", "Profession", "UpdatedDate" },
+                values: new object[] { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ataberk", false, "Kaya", "", "Full Stack Software Developer", null });
 
             migrationBuilder.InsertData(
                 table: "HomePages",
                 columns: new[] { "Id", "CreatedDate", "DeletedDate", "HeaderContent", "HeaderTitle", "IsActive", "MainContent", "MainTitle", "UpdatedDate" },
-                values: new object[] { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 10, 4, 1, 31, 112, DateTimeKind.Local).AddTicks(2199), null, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "What is Lorem Ipsum?", true, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "What is Lorem Ipsum?", null });
+                values: new object[] { new Guid("58eb3902-48a5-48e7-b5a8-b43847f0f6bf"), new DateTime(2025, 5, 29, 18, 34, 46, 418, DateTimeKind.Local).AddTicks(6576), null, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "What is Lorem Ipsum?", true, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", "What is Lorem Ipsum?", null });
 
             migrationBuilder.InsertData(
                 table: "Blogs",
