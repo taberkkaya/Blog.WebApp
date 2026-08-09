@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\AK.BlogWebApp.WebAPI.props" />
-</Project>

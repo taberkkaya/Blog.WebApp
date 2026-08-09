@@ -7,12 +7,12 @@ import { BlogModel } from '../../models/blog.model';
 import { DocumentModel } from '../../models/document.model';
 import { urlForImg } from '../../constants';
 import { ClassService } from '../../services/class.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-ui-home',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, RouterLink],
   templateUrl: './ui-home.component.html',
   styleUrl: './ui-home.component.css',
 })
@@ -46,6 +46,9 @@ export class UiHomeComponent {
       this.page = res;
       this.blogs = this.page.featuredBlogs;
       this.docs = this.page.featuredDocuments;
+
+      this.page.headerContent = this.page.headerContent.replace(/&nbsp;/g, ' ');
+      this.page.mainContent = this.page.mainContent.replace(/&nbsp;/g, ' ');
     });
   }
 }

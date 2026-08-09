@@ -8,7 +8,7 @@ namespace AK.BlogWebApp.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(DependencyInjection).Assembly);
+            services.AddAutoMapper(_ => { }, typeof(DependencyInjection).Assembly);
 
             services.AddMediatR(conf =>
             {

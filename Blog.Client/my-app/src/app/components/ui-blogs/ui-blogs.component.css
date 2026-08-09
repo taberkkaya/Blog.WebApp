@@ -1,13 +1,1 @@
-@media (max-width: 768px) {
-  .custom-image {
-    width: 100%;
-    height: auto;
-  }
-}
-
-@media (min-width: 768px) {
-  .custom-image {
-    width: 100%;
-    height: 400px; /* veya istediğiniz değer */
-  }
-}
+.page-heading{max-width:700px;margin-bottom:48px}.page-heading h1{margin:12px 0;font-size:clamp(2.5rem,5vw,4.2rem)}.page-heading p{color:#66788a;font-size:1.08rem}.listing-grid{display:grid;grid-template-columns:220px 1fr;gap:44px}aside{position:sticky;top:110px;align-self:start;padding:18px;border:1px solid #dce5ea;border-radius:16px;background:#fff}.filter-title{padding:0 10px;color:#82909d;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}aside button{width:100%;margin:2px 0;padding:11px 12px;border:0;border-radius:9px;color:#53687a;background:transparent;text-align:left;font-weight:600}aside button:hover,aside button.active{color:#087f8c;background:#eaf7f7}.result-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.result-bar span{font-weight:800}.result-bar small{color:#82909d}.read-link{padding:8px 0;border:0;color:#087f8c;background:none;font-weight:700}.read-link i{margin-left:6px}.pager{display:flex;justify-content:center;gap:7px;margin-top:36px}.pager button{display:grid;width:40px;height:40px;place-items:center;border:1px solid #dce5ea;border-radius:10px;background:#fff}.pager button.active{border-color:#087f8c;color:#fff;background:#087f8c}.pager button:disabled{opacity:.4}.mobile-filter{display:none;margin-bottom:20px}@media(max-width:767px){.listing-grid{display:block}aside{display:none}.mobile-filter{display:block}.result-bar{align-items:flex-start;flex-direction:column;gap:4px}}

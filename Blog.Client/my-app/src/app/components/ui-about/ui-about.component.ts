@@ -5,11 +5,12 @@ import { urlForImg } from '../../constants';
 import { HttpService } from '../../services/http.service';
 import { SwalService } from '../../services/swal.service';
 import { ClassService } from '../../services/class.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-ui-about',
   standalone: true,
-  imports: [SharedModule],
+  imports: [SharedModule, RouterModule],
   templateUrl: './ui-about.component.html',
   styleUrl: './ui-about.component.css',
 })
@@ -30,6 +31,7 @@ export class UiAboutComponent {
   getDatas() {
     this.http.post<AboutModel>('AboutPage/GetActive', {}, (res) => {
       this.page = res;
+      this.page.description = this.page.description.replace(/&nbsp;/g, ' ');
     });
   }
 }
